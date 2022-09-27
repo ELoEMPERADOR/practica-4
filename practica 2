@@ -1,0 +1,18 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time #para dar pausas a las acciones de selenium por que se buguea esta chikito
+
+driver = webdriver.Chrome(executable_path=r"C:\Users\reyna\OneDrive\Escritorio\REY\chromedriver.exe")
+
+driver.get("https://github.com/login")
+
+usuario = driver.find_element (By.ID, "login_field")
+#time.sleep(secs=10)
+usuario.send_keys("reynaldo10000@gmail.com")
+
+password = driver.find_element (By.ID, "password")
+#time.sleep(secs=10)
+password.send_keys("oruga2000.")
+
+usuario.send_keys(Keys.ENTER)
